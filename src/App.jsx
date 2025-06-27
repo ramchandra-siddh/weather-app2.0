@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [query, setQuery] = useState({ q: "sikar" });
+  const [query, setQuery] = useState({ q: "jaipur" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
@@ -33,10 +33,17 @@ function App() {
   }, [query, units]);
 
   const formatBackground = () => {
-    if (!weather) return "from-cyan-600 to blue-700";
+    // if (!weather) return "from-cyan-600 to blue-700";
+    // const threshold = units === "metric" ? 20 : 60;
+    // if (weather.temp <= threshold) return "from-cyan-600 to-blue-700";
+    // return "from-yellow-600 to-orange-700";
+
+    if (!weather) return "bg-gradient-to-t from-cyan-600 to-blue-700";
     const threshold = units === "metric" ? 20 : 60;
-    if (weather.temp <= threshold) return "from-cyan-600 to-blue-700";
-    return "from-yellow-600 to-orange-700";
+
+    if (weather.temp <= threshold)
+      return "bg-[linear-gradient(to_top,#5ac9fd,#1569f2)]";
+    return "bg-[linear-gradient(to_top,#FFC107,#ffa200)]";
   };
 
   return (
