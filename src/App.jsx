@@ -57,7 +57,7 @@ function App() {
         </>
       )}
 
-      <ToastContainer autoClose={2500} hideProgressBar={true} theme="colored" />
+      {/* <ToastContainer autoClose={2500} hideProgressBar={true} theme="colored" /> */}
     </div>
   );
 }
